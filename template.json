@@ -1,0 +1,85 @@
+{
+	// required, a unique identifier of your configuration. Suggested syntax: `<country>-<city>` e.g. `Bolivia-Cochabamba`
+	"id": "Bolivia-Cochabamba",
+	// optional, the name of your configuration. It should be the name of the region it is responsible for, default: ""
+	"name": "Bolivia, Cochabamba & La Paz",
+	// optional, the name of the city this configuration applies to, default: ""
+	"city": "Cochabamba",
+	// optional, the name of the city this configuration applies to, default: ""
+	"country": "Bolivia",
+	// required, collection of endpoint urls
+	"endpoint": {
+		// required, url to the pngs' which make up the map background.
+		//   corresponding backend module:
+		//     Tileserver: https://github.com/trufi-association/trufi-server-modules/tree/main/tileserver
+		//     Static_Maps (alternative): https://github.com/trufi-association/trufi-server-modules/tree/main/static_maps
+		//   corresponding builder for the backend:
+		//     Tileserver: https://github.com/trufi-association/trufi-server-resources/tree/main/mbtiles-builder
+		//     Static_Maps (alternative): https://github.com/trufi-association/trufi-server-resources/tree/main/static-map-tiles-builder
+		// "Trufi Versal" will add '/{z}/{x}/{y}{r}.png' to the end of the url specified here
+		"mapBackground": "https://cbba.trufi.app/tileserver/styles/trufi-liberty",
+		"nominatim": "https://cbba.trufi.app/nominatim/reverse", // TODO: is this still needed?
+		// optional if 'opentripplannerGraphQL' has been already specified, url to the opentripplanner journey planning API
+		//   corresponding backend module:
+		//     OTP: https://github.com/trufi-association/trufi-server-modules/tree/main/otp
+		//   corresponding builder for the backend:
+		//     OTP: https://github.com/trufi-association/trufi-server-resources/tree/main/graph-builder
+		"opentripplanner": "https://cbba.trufi.app/otp",
+		// optional when 'endpoint.opentripplanner' given otherwise required, url to the opentripplanner journey planning GraphQL API
+		//   corresponding backend module:
+		//     OTP: https://github.com/trufi-association/trufi-server-modules/tree/main/otp
+		//   corresponding builder for the backend:
+		//     OTP: https://github.com/trufi-association/trufi-server-resources/tree/main/graph-builder
+		"opentripplannerGraphQL": "https://cbba.trufi.app/otp/index/graphql",
+		// optional when 'endpoint.searchAssetPath' given otherwise required, url to the photon service
+		//   corresponding backend module:
+		//     Photon: https://github.com/trufi-association/trufi-server-modules/tree/main/photon
+		//   corresponding builder for the backend:
+		//     OTP: https://github.com/trufi-association/trufi-server-resources/tree/main/photon-data-builder
+		// "Trufi Versal" will append '/reverse?lon=${location.longitude}&lat=${location.latitude}' to the end of the url string when utilizing the reverse geocoding API of photon
+		"photon": "https://cbba.trufi.app/photon",
+		// optional when 'endpoint.photon' given otherwise required, url to the offline search index for downloading
+		//   corresponding builder to build that offline search index:
+		//     GTFS-Builder: https://github.com/trufi-association/trufi-server-resources/tree/main/gtfs-builder
+		"searchAssetPath": "https://cbba.trufi.app/assets/search.json"
+	},
+	// requiered
+	"mapConfiguration": {
+		// required
+		// Useful resources:
+		//   - https://www.latlong.net/
+		//   - https://en.wikipedia.org/wiki/Geographic_coordinate_system#/media/File:FedStats_Lat_long.svg
+		"mapCenter": {
+			// required, latitude, by default when the app opens it will center the map to this point
+			"lat": -17.392600,
+			// required, longitude, by default when the app opens it will center the map to this point
+			"lon": -66.158787
+		}
+	},
+	// required
+	"contact": {
+		// required, contact email
+		"email": "example@example.com",
+		// optional, url to a feedback form or another opportunity to give feedback
+		"feedbackUrl": "https://example.com/feedback", // optional
+		// optional, url to an informative website about this project with a download option of "Trufi Versal"
+		"shareAppUrl": "https://example.com/share", //optional
+		// optional, collection of social media links
+		"socialmedia": { 
+			// optional, url to a Facebook (fan)page
+			"facebook": "https://www.facebook.com/Example"
+		}
+	},
+	// required, regardless of what your country regulations say exactly.
+	// We are not responsible for your services and what you do with the data of your users
+	"legal": {
+		// required, contact email for legal inquiries
+		"email": "example@example.com",
+		// required, full name of your organization and its legal form (if this applies)
+		"orgName": "",
+		// optional, if you need a terms of service depends on your country, url to your terms of service
+		"termsOfServiceUrl": "",
+		// required even if not in your country, url to your privacy policy (what do you do with the data of your users and why you process them and when you delete them etc.)
+		"privacyPolicyUrl": ""
+	}
+}
