@@ -1,0 +1,32 @@
+{
+	"id": "Germany-Hamburg", 
+	"name": "Germany, Hamburg", 
+	"city": "Hamburg", 
+	"country": "Germany", 
+	"endpoint": {
+		"mapBackground": "https://de-hamburg.api.trufi.app:8300/tileserver", 
+		"nominatim": "https://api.trufi.app/nominatim-germany/reverse",
+		"opentripplannerGraphQL": "https://api.trufi.app/otp-hh/routers/default/index/graphql",
+		"photon": "https://de-hamburg.api.trufi.app:8300/photon"
+	},
+	"mapConfiguration": { 
+		"mapCenter": { 
+			"lat": 53.551086, 
+			"lon": 9.993682 
+		}
+	},
+	"contact": { 
+		"email": "example@example.com", 
+		"feedbackUrl": "https://example.com/feedback", 
+		"shareAppUrl": "https://example.com/share",
+		"socialmedia": { 
+			"facebook": "https://www.facebook.com/Example" 
+		}
+	},
+	"legal": { 
+		"email": "example@example.com", 
+		"orgName": "Trufi Association e.V.", 
+		"termsOfServiceUrl": "", 
+		"privacyPolicyUrl": "" 
+	}
+}

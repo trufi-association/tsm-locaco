@@ -1,0 +1,6 @@
+{
+	"NODE_ENV": "NODE_ENV",
+	"port": "locaco_port",
+	"hostname": "hostname",
+	"dataDir": "locaco_dataDir"
+}

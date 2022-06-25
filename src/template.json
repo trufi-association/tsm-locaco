@@ -1,0 +1,34 @@
+{
+	"id": "Bolivia-Cochabamba", // required
+	"name": "Bolivia, Cochabamba & La Paz", // default: ""
+	"city": "Cochabamba", // default: ""
+	"country": "Bolivia", // default: ""
+	"endpoint": {
+		"mapBackground": "https://cbba.trufi.app/tileserver", // required
+		"nominatim": "https://cbba.trufi.app/nominatim/reverse", // TODO: is this still needed?
+		"opentripplanner": "https://cbba.trufi.app/otp", // optional when 'endpoint.opentripplanner_graphql' given otherwise required
+		"opentripplannerGraphQL": "https://cbba.trufi.app/otp/index/graphql", // optional when 'endpoint.opentripplanner' given otherwise required
+		"photon": "https://cbba.trufi.app/photon", // optional when 'endpoint.searchAssetPath' given otherwise required
+		"searchAssetPath": "https://cbba.trufi.app/assets/search.json", // optional when 'endpoint.photon' given otherwise required
+	},
+	"mapConfiguration": { // required
+		"mapCenter": { // required
+			"lat": -17.392600, // required
+			"lon": -66.158787 // required
+		}
+	},
+	"contact": { // required
+		"email": "example@example.com", // required
+		"feedbackUrl": "https://example.com/feedback", // optional
+		"shareAppUrl": "https://example.com/share", //optional
+		"socialmedia": { // optional
+			"facebook": "https://www.facebook.com/Example" // optional
+		}
+	},
+	"legal": { // required
+		"email": "example@example.com", // required
+		"orgName": "", // required
+		"termsOfServiceUrl": "", // optional
+		"privacyPolicyUrl": "" // required
+	}
+}

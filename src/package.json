@@ -1,0 +1,15 @@
+{
+  "name": "tsm-locaco",
+  "version": "1.0.0",
+  "description": "Location aware configuration backend which provides compactible clients with the right city configuration used to connect to the endpoints responsible for the region the user is currently in",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sören Reinecke",
+  "license": "MIT",
+  "dependencies": {
+    "config": "^3.3.7",
+    "express": "^4.18.1"
+  }
+}

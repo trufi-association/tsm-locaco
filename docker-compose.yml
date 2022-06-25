@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  locaco:
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+    environment:
+      - locaco_port=80
+      - hostname=0.0.0.0
+    volumes:
+      - ./data:/app/cities
+    restart: unless-stopped
+    ports:
+      - "8080:80"

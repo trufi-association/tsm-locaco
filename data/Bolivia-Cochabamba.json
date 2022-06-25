@@ -1,0 +1,34 @@
+{
+	"id": "Bolivia-Cochabamba", 
+	"name": "Bolivia, Cochabamba & La Paz", 
+	"city": "Cochabamba", 
+	"country": "Bolivia", 
+	"endpoint": {
+		"mapBackground": "https://cbba.trufi.app/tileserver", 
+		"nominatim": "https://cbba.trufi.app/nominatim/reverse",
+		"opentripplanner": "https://cbba.trufi.app/otp", 
+		"opentripplannerGraphQL": "https://cbba.trufi.app/otp/index/graphql",
+		"photon": "https://cbba.trufi.app/photon",
+		"searchAssetPath": "https://cbba.trufi.app/assets/search.json" 
+	},
+	"mapConfiguration": { 
+		"mapCenter": { 
+			"lat": -17.392600, 
+			"lon": -66.158787 
+		}
+	},
+	"contact": { 
+		"email": "example@example.com", 
+		"feedbackUrl": "https://example.com/feedback", 
+		"shareAppUrl": "https://example.com/share",
+		"socialmedia": { 
+			"facebook": "https://www.facebook.com/Example" 
+		}
+	},
+	"legal": { 
+		"email": "example@example.com", 
+		"orgName": "", 
+		"termsOfServiceUrl": "", 
+		"privacyPolicyUrl": "" 
+	}
+}
