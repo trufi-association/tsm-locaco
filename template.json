@@ -3,9 +3,9 @@
 	"id": "Bolivia-Cochabamba",
 	// optional, the name of your configuration. It should be the name of the region it is responsible for, default: ""
 	"name": "Bolivia, Cochabamba & La Paz",
-	// optional, the name of the city this configuration applies to, default: ""
+	// required, the name of the city this configuration applies to, default: ""
 	"city": "Cochabamba",
-	// optional, the name of the city this configuration applies to, default: ""
+	// required, the name of the city this configuration applies to, default: ""
 	"country": "Bolivia",
 	// required, collection of endpoint urls
 	"endpoint": {
@@ -54,7 +54,9 @@
 			"lat": -17.392600,
 			// required, longitude, by default when the app opens it will center the map to this point
 			"lon": -66.158787
-		}
+		},
+		// required, the distance in km the location of the user can be max. away from the coordinate in 'mapConfiguration.mapCenter', default: '50' in km
+		"maxDistance": 50
 	},
 	// required
 	"contact": {

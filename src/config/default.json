@@ -1,6 +1,6 @@
 {
 	"NODE_ENV": "production",
-	"port": 5000,
+	"port": 8080,
 	"hostname": "0.0.0.0",
 	"dataDir": "cities"
 }

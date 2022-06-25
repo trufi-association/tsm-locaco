@@ -17,3 +17,99 @@ So we basically took the burden from modifying, compiling and releasing the app 
 3. You send it to us and we upload it.
 4. You do the marketing and point your users to our "Trufi Versal" app.
 5. On each start of the app it sends the current location of the user to our server and returns back the configuration. Imagine you created the backend for Nouakchott and we uploaded your JSON configuration to our server. Users using the app in Nouakchott will receive your JSON configuration and the app will speak with your server to provide the user with the expected experience.
+
+## Exposed APIs
+
+### GET configuration for location
+
+`/configuration/city` e.g. `https://example.com/configuration/city`
+
+JSON example body request: 
+
+```json
+{
+    "lat": 53.531,
+    "lon": 9.90
+}
+```
+
+The given coordinate needs to be in WSG64.
+
+JSON example response:
+
+```json
+{
+    "id": "Germany-Hamburg",
+    "name": "Germany, Hamburg",
+    "city": "Hamburg",
+    "country": "Germany",
+    "endpoint": {
+        "mapBackground": "https://de-hamburg.api.trufi.app:8300/tileserver",
+        "nominatim": "https://api.trufi.app/nominatim-germany/reverse",
+        "opentripplannerGraphQL": "https://api.trufi.app/otp-hh/routers/default/index/graphql",
+        "photon": "https://de-hamburg.api.trufi.app:8300/photon"
+    },
+    "mapConfiguration": {
+        "mapCenter": {
+            "lat": 53.551086,
+            "lon": 9.993682
+        }
+    },
+    "contact": {
+        "email": "example@example.com",
+        "feedbackUrl": "https://example.com/feedback",
+        "shareAppUrl": "https://example.com/share",
+        "socialmedia": {
+            "facebook": "https://www.facebook.com/Example"
+        }
+    },
+    "legal": {
+        "email": "example@example.com",
+        "orgName": "Trufi Association e.V.",
+        "termsOfServiceUrl": "",
+        "privacyPolicyUrl": ""
+    }
+}
+```
+
+See our [example.json](example.json) for the format and a description of the fields of the response (city configuration). If you want to use the example for testing or want to build upon it you will need to remove the comments as comments are illegal in JSON.
+
+#### Errors thrown
+
+This endpoint returns errors in the following circumstances:
+
+1. No valid JSON body
+
+   ```json
+   {
+       "msg": "JSON body parameter 'lat' or 'lon' or both haven't been provided",
+       "status": 300
+   }
+   ```
+
+2. No city configurations available in this instance
+   ```json
+   {
+       "msg": "This instance of 'Locaco' contains no city configurations",
+       "code": 100
+   }
+   ```
+
+3. Not withing the allowed range of the nearest city
+   ```json
+   {
+       "msg": "Not withing the range of nearest city 'Germany, Hamburg'.",
+       "code": 200,
+       "maxDistanceAllowed": 50,
+       "nearestCity": "Hamburg",
+       "nearestCountry": "Germany"
+   }
+   ```
+
+   
+
+#### Error classes
+
+- `100-199`: Issues with the instance itself.
+- `200-299`: Issues with the city configuration.
+- `300-399`: Issues with the request.
