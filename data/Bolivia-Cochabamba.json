@@ -15,7 +15,8 @@
 		"mapCenter": { 
 			"lat": -17.392600, 
 			"lon": -66.158787 
-		}
+		},
+		"maxDistance": 50
 	},
 	"contact": { 
 		"email": "example@example.com", 
